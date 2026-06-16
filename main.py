@@ -1,6 +1,7 @@
 from estoque import Estoque
 from sistema import Sistema
 from produto import ProdutoFisico, ProdutoDigital
+from caixa import Caixa
 
 estoque = Estoque()
 
@@ -12,4 +13,15 @@ estoque.adicionar(p2)
 
 sistema = Sistema(estoque)
 
+print("=== ESTOQUE ===")
 estoque.listar()
+
+print("\n=== CAIXA GENÉRICA ===")
+
+caixa = Caixa()
+
+caixa.adicionar(p1)
+caixa.adicionar(p2)
+
+for produto in caixa.listar():
+    produto.exibir()
